@@ -1,6 +1,10 @@
 use std::time::Duration;
 
 use dbus::{blocking::Connection, channel::MatchingReceiver, message::MatchRule, Error, Message};
+/// A monitoring program
+/// For now, I have it set to write out all the messages.
+/// I need to figure out how to filter out only things that are a11y specific.
+/// From what I can tell, the thing is org.a11y.Bus but not sure where to go from there.
 
 fn main() {
     let connection = Connection::new_session().expect("I failed to connect to the session. bus");
