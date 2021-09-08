@@ -1,47 +1,43 @@
 use std::time::Duration;
 
-use dbus::{blocking::Connection, channel::MatchingReceiver, message::MatchRule, Error, Message};
-/// A monitoring program
-/// For now, I have it set to write out all the messages.
-/// I need to figure out how to filter out only things that are a11y specific.
-/// From what I can tell, the thing is org.a11y.Bus but not sure where to go from there.
+use dbus::blocking::Connection;
+use dbus::channel::MatchingReceiver;
+use dbus::Message;
+use dbus::message::MatchRule;
 
+// This programs implements the equivalent of running the "dbus-monitor" tool
 fn main() {
-    let connection = Connection::new_session().expect("I failed to connect to the session. bus");
+    // First open up a connection to the session bus.
+    let conn = Connection::new_session().expect("D-Bus connection failed");
+
+    // Second create a rule to match messages we want to receive; in this example we add no
+    // further requirements, so all messages will match
     let mut rule = MatchRule::new();
-    let proxy = connection.with_proxy(
-        "org.freedesktop.DBus",
-        "/org/freedesktop/dbus",
-        Duration::from_millis(5000),
-    );
-    let result: Result<(), Error> = proxy.method_call(
-        "org.freedesktop.Dbus.Monitoring",
-        "BecomeMonitor",
-        (vec![rule.match_str()], 0u32),
-    );
+
+    // Try matching using new scheme
+    let proxy = conn.with_proxy("org.freedesktop.DBus", "/org/freedesktop/DBus", Duration::from_millis(5000));
+    let result: Result<(), dbus::Error> = proxy.method_call("org.freedesktop.DBus.Monitoring", "BecomeMonitor", (vec!(rule.match_str()), 0u32));
+
     if result.is_ok() {
-        connection.start_receive(
-            rule,
-            Box::new(|msg, _| {
-                handle_message(&msg);
-                true
-            }),
-        );
+        // Start matching using new scheme
+        conn.start_receive(rule, Box::new(|msg, _| {
+            handle_message(&msg);
+            true
+        }));
     } else {
-        rule.eavesdrop = true;
-        connection
-            .add_match(rule, |_: (), _, msg| {
-                handle_message(msg);
-                true
-            })
-            .expect("match failed.");
+        // Start matching using old scheme
+        rule.eavesdrop = true; // this lets us eavesdrop on *all* session messages, not just ours
+        conn.add_match(rule, |_: (), _, msg| {
+            handle_message(&msg);
+            true
+        }).expect("add_match failed");
     }
-    loop {
-        connection.process(Duration::from_millis(1000)).unwrap();
-    }
+
+    // Loop and print out all messages received (using handle_message()) as they come.
+    // Some can be quite large, e.g. if they contain embedded images..
+    loop { conn.process(Duration::from_millis(1000)).unwrap(); };
 }
 
-// Print out a message
 fn handle_message(msg: &Message) {
-    println!("Received {:?}.", msg);
+    println!("Got message: {:?}", msg);
 }
