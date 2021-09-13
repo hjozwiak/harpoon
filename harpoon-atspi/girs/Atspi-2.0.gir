@@ -12394,38 +12394,6 @@ connection.</doc>
         </parameter>
       </parameters>
     </function>
-    <function name="dbus_server_setup_with_g_main"
-              c:identifier="atspi_dbus_server_setup_with_g_main"
-              introspectable="0">
-      <doc xml:space="preserve"
-           filename="../atspi/atspi-gmain.c"
-           line="593">Sets the watch and timeout functions of a #DBusServer
-to integrate the server with the GLib main loop.
-In most cases the context argument should be #NULL.
-
-If called twice for the same context, does nothing the second
-time. If called once with context A and once with context B,
-context B replaces context A as the context monitoring the
-connection.</doc>
-      <source-position filename="../atspi/atspi-gmain.h" line="34"/>
-      <return-value transfer-ownership="none">
-        <type name="none" c:type="void"/>
-      </return-value>
-      <parameters>
-        <parameter name="server" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="../atspi/atspi-gmain.c"
-               line="595">the server</doc>
-          <type c:type="DBusServer*"/>
-        </parameter>
-        <parameter name="context" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="../atspi/atspi-gmain.c"
-               line="596">the #GMainContext or #NULL for default</doc>
-          <type name="GLib.MainContext" c:type="GMainContext*"/>
-        </parameter>
-      </parameters>
-    </function>
     <function name="deregister_device_event_listener"
               c:identifier="atspi_deregister_device_event_listener"
               throws="1">
