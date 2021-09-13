@@ -10,7 +10,5 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-atk = "0.14.0"
 dbus = "0.9.3"
-gtk = "0.14.1"
 speech-dispatcher = "0.7.0"
