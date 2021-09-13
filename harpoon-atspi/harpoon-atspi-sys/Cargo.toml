@@ -2,7 +2,22 @@
 name = "harpoon-atspi-sys"
 version = "0.1.0"
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+build = "build.rs"
+[package.metadata.system-deps.atspi_2]
+name = "atspi-2"
+version = "2.38"
+[package.metadata.docs.rs]
+features = ["dox"]
 
 [dependencies]
+libc = "0.2"
+
+[build-dependencies]
+system-deps = "4"
+
+[dev-dependencies]
+shell-words = "1.0.0"
+tempfile = "3"
+
+[features]
+dox = []
