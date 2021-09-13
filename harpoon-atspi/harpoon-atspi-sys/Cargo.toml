@@ -1,6 +1,6 @@
 [package]
-name = "harpoon-atspi-sys"
-version = "0.1.0"
+name = "atspi-sys"
+version = "0.0.1"
 edition = "2018"
 build = "build.rs"
 [package.metadata.system-deps.atspi_2]
@@ -9,9 +9,20 @@ version = "2.38"
 [package.metadata.docs.rs]
 features = ["dox"]
 
+[lib]
+name = "atspi_sys"
+
 [dependencies]
 libc = "0.2"
 
+[dependencies.gobject-sys]
+git = "https://github.com/gtk-rs/gtk-rs-core"
+
+[dependencies.glib-sys]
+git = "https://github.com/gtk-rs/gtk-rs-core"
+
+[dependencies.libdbus-sys]
+git = "https://github.com/diwic/dbus-rs"
 [build-dependencies]
 system-deps = "4"
 

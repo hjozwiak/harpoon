@@ -12394,7 +12394,7 @@ connection.</doc>
         </parameter>
       </parameters>
     </function>
-    <function name="deregister_device_event_listener"
+   <function name="deregister_device_event_listener"
               c:identifier="atspi_deregister_device_event_listener"
               throws="1">
       <doc xml:space="preserve"
