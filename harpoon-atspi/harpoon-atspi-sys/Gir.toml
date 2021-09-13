@@ -1,0 +1,18 @@
+[options]
+work_mode = "sys"
+library = "Atspi"
+version = "2.0"
+target_path = "."
+min_cfg_version = "2.38"
+single_version_file = "."
+girs_directories = ["../girs/"]
+external_libraries = [
+   "GLib",
+   "Gio",
+   "GObject"
+]
+
+
+ignore = [
+
+]
