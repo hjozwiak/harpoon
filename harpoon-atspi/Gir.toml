@@ -1,0 +1,104 @@
+[options]
+
+girs_directories = ["girs"]
+
+library = "Atspi"
+version = "2.0"
+min_cfg_version = "2.38"
+target_path = "."
+work_mode = "normal"
+generate_safety_asserts = true
+deprecate_by_min_version = true
+
+generate = [
+            "Atspi.Accessible",
+            "Atspi.Action",
+            "Atspi.Application",
+            "Atspi.Cache",
+            "Atspi.Collection",
+            "Atspi.CollectionMatchType",
+            "Atspi.CollectionSortOrder",
+            "Atspi.CollectionTreeTraversalType",
+            "Atspi.Component",
+            "Atspi.ComponentLayer",
+            "Atspi.ControllerEventMask",
+            "Atspi.CoordType",
+            "Atspi.DeviceEvent",
+            "Atspi.DeviceEventMask",
+            "Atspi.DeviceListener",
+            "Atspi.DeviceListenerCB",
+            # "Atspi.DeviceListenerMode",
+            # Configured object `Atspi.DeviceListenerMode` missing from the library
+            "Atspi.DeviceListenerSimpleCB",
+            "Atspi.Document",
+            # "Atspi.Event",
+            # Manually added functions
+            "Atspi.EventListener",
+            # function `atspi_event_listener_new_simple`'s callback `callback` without associated user data
+            # "Atspi.EventListenerMode",
+            # 'Missing memory management functions for Atspi.EventListenerMode'
+            "Atspi.EventListenerCB",
+            "Atspi.EventListenerSimpleCB",
+            "Atspi.EditableText",
+            "Atspi.Hyperlink",
+            "Atspi.Hypertext",
+            "Atspi.Image",
+            "Atspi.KeyDefinition",
+            "Atspi.KeyEventMask",
+            "Atspi.KeyListenerSyncType",
+            "Atspi.KeyMaskType",
+            # "Atspi.KeySet",
+            # 'Missing memory management functions for Atspi.KeySet'
+            "Atspi.KeystrokeListener",
+            "Atspi.KeySynthType",
+            "Atspi.MatchRule",
+            "Atspi.Object",
+            "Atspi.Point",
+            "Atspi.Range",
+            # "Atspi.Rect",
+            # Manual methods
+            "Atspi.Relation",
+            "Atspi.RelationType",
+            "Atspi.Role",
+            "Atspi.Selection",
+            "Atspi.StateSet",
+            "Atspi.StateType",
+            "Atspi.Table",
+            "Atspi.TableCell",
+             "Atspi.Text",
+            "Atspi.TextBoundaryType",
+            "Atspi.TextClipType",
+            "Atspi.TextGranularity",
+            "Atspi.TextRange",
+            "Atspi.Value",
+        ]
+
+manual = [
+         "GLib.Error",
+         "GLib.DestroyNotify",
+         "GLib.MainContext",
+         "Atspi.Event",
+         "Atspi.Rect",
+         "GObject.Object",
+         "GObject.Value",
+         "GObject.ValueArray",
+"DBus.Connection",
+       ]
+
+
+# [[object]]
+# name = "Atspi.Accessible"
+# status = "generate"
+#    [[object.function]]
+#    name = "get_attributes"
+#    # *.HashTable TypeId { ns_id: 0, id: 28 }/TypeId { ns_id: 0, id: 28 }
+#    ignore = true
+
+#[[object]]
+#name = "Atspi.Document"
+#status = "generate"
+#    [[object.function]]
+#    name = "get_document_attributes"
+#    # *.HashTable TypeId { ns_id: 0, id: 28 }/TypeId { ns_id: 0, id: 28 }
+#    ignore = true
+
