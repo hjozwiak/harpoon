@@ -8,8 +8,8 @@
 
 use gobject_sys as gobject;
 use glib_sys as glib;
-use dbus_sys as dbus;
-
+use libdbus_sys as dbus;
+use glib::GTimeVal as timeval;
 #[allow(unused_imports)]
 use libc::{c_int, c_char, c_uchar, c_float, c_uint, c_double,
     c_short, c_ushort, c_long, c_ulong,
