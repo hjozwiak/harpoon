@@ -24,7 +24,7 @@ pub type AtspiDeviceEventMask = c_uint;
 pub type AtspiKeyEventMask = c_uint;
 pub type AtspiKeyMaskType = c_uint;
 pub type AtspiKeystrokeListener = c_void;
-
+pub type _AtspiAccessible = AtspiAccessible;
 // Enums
 pub type AtspiCollectionMatchType = c_int;
 pub const ATSPI_Collection_MATCH_INVALID: AtspiCollectionMatchType = 0;
