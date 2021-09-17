@@ -418,6 +418,7 @@ dependencies = [
  "simple-log",
  "speech-dispatcher",
  "zbus",
+ "zvariant",
 ]
 
 [[package]]
