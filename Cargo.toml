@@ -1,14 +1,13 @@
 [package]
 name = "harpoon"
-authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
-version = "1.0.0"
+version = "0.1.0"
 edition = "2018"
-description = "A Linux screenreader written in Rust."
-license = "MIT"
-readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dbus = "0.9.3"
+log = "0.4.14"
+simple-log = "1.0.6"
 speech-dispatcher = "0.7.0"
+zbus = "1.9.1"
+zvariant = "2.8.0"
