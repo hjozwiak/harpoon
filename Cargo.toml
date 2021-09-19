@@ -9,6 +9,5 @@ edition = "2018"
 log = "0.4.14"
 simple-log = "1.0.6"
 speech-dispatcher = "0.7.0"
-tokio = {version = "1.11.0", features = ["full"]}
 zbus = "1.9.1"
 zvariant = "2.8.0"
