@@ -1,16 +1,19 @@
 mod generated;
 use generated::bus::BusProxy;
-use log::{debug, error, info};
-use simple_log::quick;
-use zbus::Connection;
+use generated::registry::RegistryProxy;
+use zbus::{Connection, Result};
 fn main() {
-    quick().expect("Error getting the log server setup.");
-    debug!("Starting program.");
-    let connection = Connection::new_session().expect("Could not connect to bus.");
-    let proxy = generated::bus::BusProxy::new(&connection).expect("Error obtaining proxy object.");
-    let actual_bus = proxy.get_address();
-    match actual_bus {
-        Ok(address) => debug!("Found the atspi bus at {}", address),
-        Err(e) => error!("Problem getting the bus. {}", e),
-    }
+    let accessibility_bus = get_accessibility_bus(
+        Connection::new_session().expect("Problem connecting to session bus."),
+    )
+    .expect("Could not connect to the accessibility bus.");
+}
+
+fn get_accessibility_bus(con: Connection) -> Result<Connection> {
+    let proxy = BusProxy::new(&con).expect("Problem creating the bus proxy.");
+    let actual_bus = match proxy.get_address() {
+        Ok(addr) => addr,
+        Err(e) => return Err(e),
+    };
+    Connection::new_for_address(&actual_bus, true)
 }
