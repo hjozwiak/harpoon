@@ -3,7 +3,7 @@ use generated::bus::BusProxy;
 use zbus::{Connection, Result};
 
 fn main() {
-    let accessibility_bus = get_accessibility_bus(
+    let _accessibility_bus = get_accessibility_bus(
         Connection::new_session().expect("Problem connecting to session bus."),
     )
     .expect("Could not connect to the accessibility bus.");
