@@ -1,12 +1,23 @@
 mod generated;
+use generated::accessible::AccessibleProxy;
 use generated::bus::BusProxy;
 use zbus::{Connection, Result};
 
 fn main() {
-    let _accessibility_bus = get_accessibility_bus(
+    let accessibility_bus = get_accessibility_bus(
         Connection::new_session().expect("Problem connecting to session bus."),
     )
     .expect("Could not connect to the accessibility bus.");
+    let root = AccessibleProxy::new_for(
+        &accessibility_bus,
+        "org.a11y.atspi.Registry",
+        "/org/a11y/atspi/accessible/root",
+    )
+    .expect("Error creating proxy object.");
+    let children = root.get_children().expect("Error getting children");
+    for child in children {
+        println!("{}: {:?}", child.0, child.1);
+    }
 }
 
 fn get_accessibility_bus(con: Connection) -> Result<Connection> {
