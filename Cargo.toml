@@ -2,6 +2,9 @@
 name = "harpoon"
 version = "0.1.0"
 edition = "2018"
+license = "mit"
+description = "A screenreader for Linux."
+authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -9,5 +12,5 @@ edition = "2018"
 log = "0.4.14"
 simple-log = "1.0.6"
 speech-dispatcher = "0.7.0"
-zbus = "1.9.1"
-zvariant = "2.8.0"
+dbus = "0.9.3"
+dbus-tree = "0.9.1"
