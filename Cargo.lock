@@ -627,9 +627,9 @@ checksum = "43b2853a4d09f215c24cc5489c992ce46052d359b5109343cbafbf26bc62f8a3"
 
 [[package]]
 name = "simple-log"
-version = "1.0.6"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52b11b251276d7ab2fc8b9f9f9f61efb770a5f18753d4a7acf4cc2f698a2c720"
+checksum = "2b913ed016993ba56b752a93b22b01a1ebd599962ec5828a029c1bc8d0275d9a"
 dependencies = [
  "log",
  "log4rs",
