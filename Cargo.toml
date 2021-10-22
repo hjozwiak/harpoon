@@ -1,7 +1,7 @@
 [package]
 name = "harpoon"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 license = "mit"
 description = "A screenreader for Linux."
 authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
@@ -13,4 +13,4 @@ log = "0.4.14"
 simple-log = "1.1.0"
 speech-dispatcher = "0.7.0"
 dbus = "0.9.3"
-dbus-tree = "0.9.1"
+dbus-crossroads = "0.5.0"
