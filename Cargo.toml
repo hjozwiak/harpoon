@@ -12,5 +12,5 @@ authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
 log = "0.4.14"
 simple-log = "1.3.3"
 speech-dispatcher = "0.7.0"
-dbus = "0.9.3"
+dbus = "0.9.5"
 dbus-tree = "0.9.1"
