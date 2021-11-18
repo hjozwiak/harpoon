@@ -165,10 +165,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "dbus-tree"
-version = "0.9.1"
+name = "dbus-crossroads"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b15e1727e94490a9e0c1174284ea83fe5e6db853b43cda77d99bb371008a4fd0"
+checksum = "a5d83c4b78f7c7d0dec4859d286665a06858a607ba406c91a36316ff36918141"
 dependencies = [
  "dbus",
 ]
@@ -233,7 +233,7 @@ name = "harpoon"
 version = "0.1.0"
 dependencies = [
  "dbus",
- "dbus-tree",
+ "dbus-crossroads",
  "log",
  "simple-log",
  "speech-dispatcher",
