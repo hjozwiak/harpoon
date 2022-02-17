@@ -145,6 +145,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "convert_case"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb4a24b1aaf0fd0ce8b45161144d6f42cd91677fd5940fd431183eb023b3a2b8"
+
+[[package]]
 name = "crc32fast"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -627,10 +633,11 @@ checksum = "43b2853a4d09f215c24cc5489c992ce46052d359b5109343cbafbf26bc62f8a3"
 
 [[package]]
 name = "simple-log"
-version = "1.4.0"
+version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22501a025dd7d58cb451fa027c3c377688d2c1061938ddf1e25e9106f568f6c5"
+checksum = "9d274deab5b96a39a62972549850084b6cf04bd1aedc6b225cea1f92239a8c5b"
 dependencies = [
+ "convert_case",
  "is_debug",
  "log",
  "log4rs",
