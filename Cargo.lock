@@ -633,9 +633,9 @@ checksum = "43b2853a4d09f215c24cc5489c992ce46052d359b5109343cbafbf26bc62f8a3"
 
 [[package]]
 name = "simple-log"
-version = "1.5.0"
+version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d274deab5b96a39a62972549850084b6cf04bd1aedc6b225cea1f92239a8c5b"
+checksum = "49edbc7d0a35324b99f805f09638e23c4847ac4cc508d7d64896484eacefd104"
 dependencies = [
  "convert_case",
  "is_debug",
