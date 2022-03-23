@@ -11,6 +11,6 @@ authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
 [dependencies]
 log = "0.4.16"
 simple-log = "1.5.1"
-speech-dispatcher = "0.12.0"
+speech-dispatcher = "0.13.0"
 dbus = "0.9.5"
 dbus-crossroads = "0.5.0"
