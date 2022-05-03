@@ -9,7 +9,7 @@ authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-log = "0.4.16"
+log = "0.4.17"
 simple-log = "1.5.1"
 speech-dispatcher = "0.13.0"
 dbus = "0.9.5"
