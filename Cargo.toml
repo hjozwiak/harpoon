@@ -10,7 +10,7 @@ authors = ["Hunter Jozwiak <hunter.t.joz@gmail.com>"]
 
 [dependencies]
 log = "0.4.17"
-simple-log = "1.5.1"
+simple-log = "1.6.0"
 speech-dispatcher = "0.13.0"
 dbus = "0.9.5"
 dbus-crossroads = "0.5.0"
